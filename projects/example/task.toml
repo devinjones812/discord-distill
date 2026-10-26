@@ -1,4 +1,4 @@
-# Task config for extract.py. See README.md for the fields.
+# Task config for extract.py. See docs/reference.md for the fields.
 
 context = """The chat is from a public Discord server for owners of the Acme X1 3D printer.
 The user just bought an X1 and wants to avoid the common problems."""
