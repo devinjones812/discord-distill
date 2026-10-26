@@ -1,0 +1,8 @@
+.env
+.DS_Store
+.venv/
+__pycache__/
+.claude/
+# Projects hold scraped messages (other people's words). Only the example is tracked.
+projects/*
+!projects/example/

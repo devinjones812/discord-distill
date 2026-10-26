@@ -1,0 +1,1 @@
+JSON.stringify({q: window.__scr ? __scr.queue.splice(0) : [], n: window.__scr ? Object.keys(__scr.msgs).length : 0, done: !!window.__scr?.done, hitStart: !!window.__scr?.hitStart, url: location.pathname})

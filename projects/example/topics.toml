@@ -1,0 +1,12 @@
+# Topics for topics.py. Start from `uv run topics.py propose` and edit; few narrow topics work best.
+# existing = the doc that `update` compares new messages against (default topics/<name>/doc.md).
+
+[[topics]]
+name = "print-failures"
+goal = """Every report of a failed or bad print on the X1: the symptom (layer shift, stringing, clogs, warping,
+first-layer problems), the printer state (firmware, nozzle, filament, slicer settings), what the owner tried,
+and what fixed it or did not. Include questions about failures that someone answers. Exclude other printers
+unless explicitly compared."""
+doc = """Troubleshooting doc: a summary table of symptoms ranked by how many owners reported them, then one
+section per symptom with likely causes, fixes ranked by firsthand success reports, and fixes that did not work.
+End with open problems nobody solved."""

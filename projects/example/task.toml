@@ -1,0 +1,21 @@
+# Task config for extract.py. See README.md for the fields.
+
+context = """The chat is from a public Discord server for owners of the Acme X1 3D printer.
+The user just bought an X1 and wants to avoid the common problems."""
+
+goal = """Find everything that helps a new owner set up and run the X1 well:
+setup steps, firmware versions, common failures and their fixes, slicer settings, recommended
+filaments, upgrades and mods, and support/warranty experiences. Price talk and memes are off-topic.
+firsthand = the author says they own an X1 and did or saw the thing."""
+
+categories = ["setup", "failures_fixes", "settings", "materials", "upgrades", "support", "other"]
+
+guide = """Write a concise Markdown guide for a new owner.
+1. Setup steps in order, with pitfalls.
+2. Common failures ranked by evidence strength (n_sources, firsthand), each with the fixes that worked.
+3. Settings and materials people recommend.
+4. Contradictions and open unknowns.
+Mark each claim with evidence strength, e.g. (5 sources, firsthand)."""
+
+extract_model = "gpt-5.4-nano"
+synth_model = "gpt-5.5"
