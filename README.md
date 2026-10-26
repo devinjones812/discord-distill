@@ -2,10 +2,12 @@
 
 Scrape Discord channels from your open Chrome tab, then use LLMs to turn thousands of messages into short docs about the topics you care about.
 
-1. **Scrape** a channel (full history or a time range) to CSV.
-2. **Overview:** extract facts relevant to your goal into `guide.md`.
-3. **Deep dives:** pick the raw messages for each topic and write a detailed doc.
-4. **Update:** scrape new messages later and report only what's new.
+## How it works
+
+1. **Scrape.** AppleScript injects JavaScript into your logged-in Discord tab. The script scrolls the channel and saves each message as it renders, so no API token is needed. To scrape a time range, it converts the end time to a Discord message ID (IDs encode timestamps) and opens the channel at that point.
+2. **Overview.** The messages are split into ~10k-token chunks. A cheap model reads each chunk and extracts facts relevant to your goal, with message IDs as citations. A stronger model merges duplicates, notes conflicts, and writes `guide.md`.
+3. **Deep dives.** Summaries lose detail, so for each topic a cheap model selects the relevant raw messages. Reply threads and short follow-ups between them are added as context. A strong model then reads only those messages and writes a detailed doc.
+4. **Update.** Later, it scrapes only the messages after the last one saved, selects the relevant ones, and reports what is new compared with each doc.
 
 ## Requirements
 
